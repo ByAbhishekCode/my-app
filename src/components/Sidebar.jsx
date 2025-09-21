@@ -86,7 +86,7 @@ const Sidebar = ({ filters, onFilterChange }) => {
         {/* Color Section */}
         <div className="mb-6 p-4 rounded-md bg-[#F3F4F6]">
           <h3 className="font-bold text-lg mb-3">COLOR</h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1">
             {[
               { name: "Red", value: "red" },
               { name: "Blue", value: "blue" },
@@ -98,7 +98,7 @@ const Sidebar = ({ filters, onFilterChange }) => {
             ].map((color) => (
               <button
                 key={color.value}
-                className={`w-8 h-8 rounded-full border ${
+                className={`w-6 h-6 rounded-full border ${
                   filters.colors.includes(color.value)
                     ? "ring-2 ring-blue-500 ring-offset-1"
                     : ""

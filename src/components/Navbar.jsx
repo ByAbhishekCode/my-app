@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo/Icon.png"; // Adjust path as needed
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo and brand name */}
         <div className="flex items-center">
-          <img src={logo} alt="E-Comm Logo" className="h-8 w-8 mr-2" />
+          <img
+            src="assets/logo/Icon.png"
+            alt="E-Comm Logo"
+            className="h-8 w-8 mr-2"
+          />
           <div className="text-2xl font-bold text-primary">E-Comm</div>
         </div>
 

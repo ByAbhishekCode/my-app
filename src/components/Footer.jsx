@@ -1,28 +1,31 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12 mt-16">
+    <footer
+      className="text-black py-12 mt-16"
+      style={{ backgroundColor: "#BCDDFE" }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-lg font-semibold mb-4 text-black">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Press
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Blog
                 </a>
               </li>
@@ -30,20 +33,20 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-lg font-semibold mb-4 text-black">Support</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Safety Center
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Community Guidelines
                 </a>
               </li>
@@ -51,25 +54,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4 text-black">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Cookies Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-black hover:text-gray-200">
                   Law Enforcement
                 </a>
               </li>
@@ -77,21 +80,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Install App</h3>
-            <p className="text-gray-300 mb-4">Get the app and shop on the go</p>
+            <h3 className="text-lg font-semibold mb-4 text-black">
+              Install App
+            </h3>
+            <p className="text-black mb-4">Get the app and shop on the go</p>
             <div className="space-y-2">
-              <button className="w-full bg-black text-white py-2 px-4 rounded">
-                Download on the App Store
-              </button>
-              <button className="w-full bg-black text-white py-2 px-4 rounded">
-                Get it on Google Play
-              </button>
             </div>
           </div>
-        </div>
-
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2023 SoftDef. All rights reserved.</p>
         </div>
       </div>
     </footer>

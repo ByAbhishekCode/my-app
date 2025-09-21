@@ -1,99 +1,105 @@
 import { useState } from "react";
 
-const PriceRangeSlider = ({ priceRange }) => {
-  const [filters, setFilters] = useState({
-    minPrice: priceRange.min,
-    maxPrice: priceRange.max,
-  });
+const PriceRangeSlider = ({ min = 0, max = 100, step = 1}) => {
+  const [minValue, setMinValue] = useState(30);
+  const [maxValue, setMaxValue] = useState(70);
 
-  const onFilterChange = (key, value) => {
-    setFilters((prev) => ({ ...prev, [key]: Number(value) }));
-  };
-
-  const minPercent =
-    ((filters.minPrice - priceRange.min) / (priceRange.max - priceRange.min)) *
-    100;
-  const maxPercent =
-    ((filters.maxPrice - priceRange.min) / (priceRange.max - priceRange.min)) *
-    100;
+  const minPercent = ((minValue - min) / (max - min)) * 100;
+  const maxPercent = ((maxValue - min) / (max - min)) * 100;
 
   return (
-    <div className="mb-6 p-4 rounded-md bg-[#F3F4F6] relative">
+    <div className="w-full p-4 bg-gray-100 rounded-md mb-6">
       <h3 className="font-bold text-lg mb-3">PRICES</h3>
 
-      {/* Live range display */}
-      <div className="text-sm mb-4">
-        Range: ${filters.minPrice.toFixed(2)} - ${filters.maxPrice.toFixed(2)}
+      <p className="mb-4 text-sm">
+        Range: ${minValue} - ${maxValue}
+      </p>
+
+      <div className="relative w-full h-8">
+        {/* Track */}
+        <div className="absolute top-1/2 left-0 right-0 h-2 bg-gray-300 rounded-full transform -translate-y-1/2" />
+
+        {/* Selected range */}
+        <div
+          className="absolute top-1/2 h-2 bg-blue-500 rounded-full transform -translate-y-1/2"
+          style={{
+            left: `${minPercent}%`,
+            right: `${100 - maxPercent}%`,
+          }}
+        />
+
+        {/* Min slider */}
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={minValue}
+          onChange={(e) =>
+            setMinValue(Math.min(Number(e.target.value), maxValue - step))
+          }
+          className="range-thumb"
+          style={{
+            zIndex: minValue >= maxValue - step ? 5 : 3, // only bring forward if overlapping
+          }}
+        />
+
+        {/* Max slider */}
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={maxValue}
+          onChange={(e) =>
+            setMaxValue(Math.max(Number(e.target.value), minValue + step))
+          }
+          className="range-thumb"
+          style={{ zIndex: 4 }}
+        />
       </div>
 
-      {/* Track background */}
-      <div className="absolute w-full h-2 bg-gray-300 rounded-lg top-10 z-0"></div>
+      <div className="flex justify-between mt-2 text-sm text-gray-700">
+        <span>${minValue}</span>
+        <span>${maxValue}</span>
+      </div>
 
-      {/* Selected range fill */}
-      <div
-        className="absolute h-2 bg-blue-500 rounded-lg top-10 z-0"
-        style={{
-          left: `${minPercent}%`,
-          right: `${100 - maxPercent}%`,
-        }}
-      ></div>
-
-      {/* Min slider */}
-      <input
-        type="range"
-        min={priceRange.min}
-        max={priceRange.max}
-        step="0.01"
-        value={filters.minPrice}
-        onChange={(e) => {
-          const value = Math.min(
-            Number(e.target.value),
-            filters.maxPrice - 0.01
-          );
-          onFilterChange("minPrice", value);
-        }}
-        className="absolute w-full h-2 appearance-none bg-transparent z-10"
-        style={{ pointerEvents: "auto" }}
-      />
-
-      {/* Max slider */}
-      <input
-        type="range"
-        min={priceRange.min}
-        max={priceRange.max}
-        step="0.01"
-        value={filters.maxPrice}
-        onChange={(e) => {
-          const value = Math.max(
-            Number(e.target.value),
-            filters.minPrice + 0.01
-          );
-          onFilterChange("maxPrice", value);
-        }}
-        className="absolute w-full h-2 appearance-none bg-transparent z-20"
-        style={{ pointerEvents: "auto" }}
-      />
-
-      {/* Thumb styling */}
+      {/* Styling thumbs */}
       <style jsx>{`
-        input[type="range"]::-webkit-slider-thumb {
+        .range-thumb {
           -webkit-appearance: none;
-          width: 20px;
-          height: 20px;
-          background: #007bff;
-          border-radius: 50%;
-          cursor: pointer;
-          border: none;
-          margin-top: -62px; /* center on track */
+          appearance: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 40px;
+          background: transparent;
+          pointer-events: auto;
         }
-        input[type="range"]::-moz-range-thumb {
-          width: 10px;
-          height: 10px;
-          background: #007bff;
+
+        .range-thumb::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 18px;
+          height: 18px;
           border-radius: 50%;
-          border: none;
+          background: #2563eb;
+          border: 3px solid #fff;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
           cursor: pointer;
-        }   
+        }
+
+        .range-thumb::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #2563eb;
+          border: 3px solid #fff;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+        }
       `}</style>
     </div>
   );

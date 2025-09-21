@@ -3,7 +3,6 @@ import Sidebar from "../components/Sidebar";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
 import { products } from "../data/products";
-import shoeImg from "../assets/banners/shoes.png";
 
 const ProductListing = () => {
   const [allProducts] = useState(products);
@@ -144,7 +143,7 @@ const ProductListing = () => {
               {/* Shoe Image */}
               <div className="flex-1 flex items-center justify-center relative p-4">
                 <img
-                  src={shoeImg}
+                  src="assets/banners/shoes.png"
                   alt="Adidas Men Running Sneakers"
                   className="relative z-10 w-64 h-48 md:w-80 md:h-60 lg:w-96 lg:h-72 object-contain transform mt-10"
                   style={{

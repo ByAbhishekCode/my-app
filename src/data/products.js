@@ -10,7 +10,7 @@ export const products = [
     isHot: true,
     colors: ["#FF0000", "#00FF00", "#0000FF"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+Air+Max",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const products = [
     isHot: true,
     colors: ["#000000", "#FFFFFF", "#FFD700"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=QUILTED+MAX",
+    imageUrl: "/assets/products/women/bag.svg",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const products = [
     isHot: false,
     colors: ["#808080", "#000080", "#800080"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+Max",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const products = [
     isHot: true,
     colors: ["#FF4500", "#2E8B57", "#DA70D6"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=MS+Nike+Air",
+    imageUrl: "/assets/products/women/bag.svg",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const products = [
     isHot: true,
     colors: ["#A52A2A", "#5F9EA0", "#FF7F50"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=MS+Nike+React",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 6,
@@ -75,11 +75,11 @@ export const products = [
     isHot: false,
     colors: ["#696969", "#E6E6FA", "#FFFACD"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=MS+Nike+Max",
+    imageUrl: "/assets/products/women/bag.svg",
   },
   {
     id: 7,
-    name: "Nike Air Max 270 React ENG",
+    name: "Nike Air Max 270 React",
     price: 298.43,
     discountPrice: 58.43,
     discountPercent: 24,
@@ -88,7 +88,7 @@ export const products = [
     isHot: true,
     colors: ["#FF6347", "#40E0D0", "#9370DB"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+ENG",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 8,
@@ -101,7 +101,7 @@ export const products = [
     isHot: false,
     colors: ["#008080", "#FFDAB9", "#BC8F8F"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+React+ENG",
+    imageUrl: "/assets/products/women/bag.svg",
   },
   {
     id: 9,
@@ -114,7 +114,7 @@ export const products = [
     isHot: true,
     colors: ["#663399", "#F0E68C", "#CD5C5C"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Air+Max+ENG",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 10,
@@ -127,7 +127,7 @@ export const products = [
     isHot: false,
     colors: ["#4B0082", "#F08080", "#20B2AA"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Max+270+ENG",
+    imageUrl: "/assets/products/women/bag.svg",
   },
   {
     id: 11,
@@ -140,7 +140,7 @@ export const products = [
     isHot: true,
     colors: ["#000000", "#FFFFFF", "#C0C0C0"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+Pro",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
   {
     id: 12,
@@ -153,6 +153,19 @@ export const products = [
     isHot: false,
     colors: ["#FF0000", "#00FF00", "#0000FF"],
     category: "Shoes",
-    imageUrl: "https://via.placeholder.com/300x300?text=Nike+Ultra",
+    imageUrl: "/assets/products/women/bag.svg",
+  },
+  {
+    id: 13,
+    name: "Ujjwal ",
+    price: 2.0,
+    discountPrice: 1.0,
+    discountPercent: 50,
+    ratingValue: 2.5,
+    ratingCount: 20000,
+    isHot: false,
+    colors: ["#FF0000", "#00FF00", "#0000FF", "#FFFFFF"],
+    category: "Shoes",
+    imageUrl: "/assets/products/men/shoes.svg",
   },
 ];
