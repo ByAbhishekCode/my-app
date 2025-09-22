@@ -9,9 +9,7 @@ const Sidebar = ({ filters, onFilterChange }) => {
 
   // Fetch data on component mount (simulating API call)
   useEffect(() => {
-    // Simulate API call with timeout
     const fetchData = () => {
-      // Data from the image (could come from an API)
       setHotDeals([
         { name: "Nike", count: 2 },
         { name: "Afrmax", count: 48 },
@@ -22,7 +20,7 @@ const Sidebar = ({ filters, onFilterChange }) => {
         { name: "Adidas", count: 95 },
       ]);
 
-      setPriceRange({ min : 13.33, max: 25.33 });
+      setPriceRange({ min: 13.33, max: 25.33 });
 
       setBrands([
         { name: "Nike", count: 99 },
@@ -35,29 +33,12 @@ const Sidebar = ({ filters, onFilterChange }) => {
     fetchData();
   }, []);
 
-  // State to track if sidebar is visible on mobile
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-
   return (
     <>
-      {/* Mobile toggle button */}
-      <button
-        className="lg:hidden fixed top-4 left-4 z-50 bg-blue-500 text-white p-2 rounded-md shadow-md"
-        onClick={() => setIsSidebarVisible(!isSidebarVisible)}
-      >
-        {isSidebarVisible ? "Hide Filters" : "Show Filters"}
-      </button>
-
       {/* Sidebar */}
       <div
         className={`
-          w-64 bg-white p-4 fixed lg:static h-full lg:h-auto overflow-y-auto
-          transition-transform duration-300 z-40
-          ${
-            isSidebarVisible
-              ? "translate-x-0"
-              : "-translate-x-full lg:translate-x-0"
-          }
+          hidden lg:block w-64 bg-white p-4 h-full overflow-y-auto
         `}
       >
         {/* Hot Deals Section */}
@@ -183,14 +164,6 @@ const Sidebar = ({ filters, onFilterChange }) => {
           Clear All Filters
         </button>
       </div>
-
-      {/* Overlay for mobile when sidebar is open */}
-      {isSidebarVisible && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
-          onClick={() => setIsSidebarVisible(false)}
-        />
-      )}
     </>
   );
 };
